@@ -5,6 +5,7 @@ Numerical simulation of the magnon self-energy arising from the coupling of a fe
 The field is theoretical quantum condensed matter physics; the methods are general-purpose scientific computing and are the main point of this repository.
 
 The simulation takes a configuration of physical and computational parameters, and produces large datasets that are immediately processed and visualized.
+
 ---
 
 ## Numerical methods

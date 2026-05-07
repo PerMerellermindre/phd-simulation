@@ -1,0 +1,37 @@
+cav:
+  L: 0.002          # lateral cavity dimension [m]
+  Lz_factor: 0.006  # Lz = Lz_factor * L (short axis -> dispersive regime)
+
+fm:                               # YIG ferromagnet
+  lattice_constant: 12.4e-10      # [m]
+  chi: 14                         # 2D susceptibility (Henning, priv. comm.)
+  Nd: 4                           # nearest neighbours on square lattice
+  spin_wave_stiffness_factor: 75.0e-41  # Da2 = 2 * factor / aFM^2
+  g_factor: 2.002
+  B_ext: 0.357                    # external field [T] (cf. Tabuchi 2016)
+
+sc:                               # MgB2 superconductor
+  lattice_constant: 330.0e-12       # [m]
+  m_eff_ratio: 1.5                # effective mass relative to bare electron mass
+  Tc: 6.0                         # critical temperature [K]
+  T: 5.95                         # bath temperature [K]
+  lambda_L: 130.0e-9              # London penetration depth [m]
+  j_C: 4.0e+10                    # critical current density [A/m^2]
+  mu_el: -5.32                    # chemical potential [eV]
+  m_ratio: 1.0                    # mass ratio used in kF estimate
+  C_tb: 3.80998212e-20            # tight-binding energy scale [eV m^2]
+
+grid:
+  kx_zoom: 2000       # inverse zoom factor for magnon kx grid
+  ky_zoom: 6400       # inverse zoom factor for magnon ky grid
+  ky_increase_res: 1  # resolution multiplier for ky axis
+  kx_step: 1
+  ky_step: 1
+  px_step: 800        # step size (in units of 2pi/L) for SC p-grid
+  py_step: 800
+  cos_bounds: 0.02    # Fermi-surface tolerance: |cos(px a)+cos(py a)-cos(kF a)|
+  paSC_bounds: 0.06   # max px a range to search for Fermi-surface pairs
+
+numerics:
+  loss_MHz: 30.0   # cavity/magnon linewidth [MHz]
+  n_jobs: -1       # joblib worker count; -1 = all available cores
